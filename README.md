@@ -26,6 +26,7 @@ require('load-gulp-aliases')(gulp, aliases);
 You can also map parallel & synchronous tasks together using objects & arrays:
 
 ```
+const aliases = {
   parallel: [
   	[ 'task:parallel-a', 'task:parallel-b' ]
   ],
@@ -37,5 +38,23 @@ You can also map parallel & synchronous tasks together using objects & arrays:
      ],
      'task:sync-b',
      'task:sync-c'
-    ]
+  ]
+}
+```
+
+The above example in YAML format (convert this to JSON & provide to module):
+
+```
+parallel:
+  -
+  	- task:parallel-a
+	- task:parallel-b
+
+mixture:
+  - task:sync-a
+  -
+    - task:parallel-a
+    - task:parallel-b
+  - task:sync-b
+  - task:sync-c
 ```
