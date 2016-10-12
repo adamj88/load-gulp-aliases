@@ -1,6 +1,6 @@
 {
   "name": "load-gulp-aliases",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create gulp tasks & sequences from aliases",
   "main": "index.js",
   "scripts": {
