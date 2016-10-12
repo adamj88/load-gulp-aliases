@@ -15,7 +15,7 @@ module.exports = function (gulp, aliases) {
             if(sequence.deps) deps = sequence.deps;
         }
 
-        gulp.task(name, sequence, (cb) => {
+        gulp.task(name, deps, (cb) => {
             tasks.push(cb);
             runSequence.apply(null, tasks);
         });
